@@ -13,7 +13,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'Xe/lolcode.vim'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'leafo/moonscript-vim'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'junegunn/goyo.vim'
@@ -47,6 +47,7 @@ Plugin 'xolox/vim-lua-ftplugin'
 Plugin 'rubik/vim-dg'
 Plugin 'elmcast/elm-vim'
 Plugin 'dag/vim-fish'
+Plugin 'ackyshake/VimCompletesMe'
 
 call vundle#end()
 
@@ -66,6 +67,8 @@ set background=dark
 set autoread
 set mouse=a
 set showcmd         " Show commands as they're being typed
+set number
+set relativenumber
 
 " Set backup off, as most of the stuff is in VCS, git, SVN
 set nobackup
@@ -313,3 +316,7 @@ let g:rust_clip_command = 'xclip -selection clipboard'
 " Golang
 let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
+
+" VimCompletesMe
+autocmd FileType vim let b:vcm_tab_complete = 'vim'
+autocmd FileType go let b:vcm_tab_complete = 'go'
