@@ -10,7 +10,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-
+set $menu rofi -show drun -theme "solarized_alternate"
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:Cantarell 11
@@ -29,6 +29,39 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
+
+# No Border and float
+
+# spotify: no border
+for_window [class="^Spotify$"] border none
+for_window [class="^Spotify Premium$"] border none
+
+# skype, steam, wine: float Gimp
+for_window [class="Code"] floating enable
+for_window [class="Firefox"] floating enable
+for_window [class="Gimp"] floating enable
+for_window [class="google-chrome"] floating enable
+for_window [class="Google-chrome"] floating enable
+for_window [class="Keybase"] floating enable
+for_window [class="Kicad"] floating enable
+for_window [class="Logic"] floating enable
+for_window [class="Neoman"] floating enable
+for_window [class="NES"] floating enable
+for_window [class="OpenSCAD"] floating enable
+for_window [class="Pidgin"] floating enable
+for_window [class="Portal"] floating enable
+for_window [class="RStudio"] floating enable
+for_window [class="Skype"] floating enable
+for_window [class="Slack"] floating enable
+for_window [class="Steam"] floating enable
+for_window [class="Tor Browser"] floating enable
+for_window [class="Virt-manager"] floating enable
+for_window [class="Virt-viewer"] floating enable
+for_window [class="VirtualBox"] floating enable
+for_window [class="vlc"] floating enable
+for_window [class="Wine"] floating enable
+for_window [class="Wireshark"] floating enable
+for_window [class="zoom"] floating enable
 
 # Use pactl to adjust volume in PulseAudio.
 # Increase & Decrease only be 5%
@@ -53,7 +86,7 @@ bindsym $mod+Shift+q kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d exec $menu
 
 # change focus
 bindsym $mod+j focus left
